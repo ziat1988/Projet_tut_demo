@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+<h1>Hien thi danh sach Livre trong DB</h1>
+
+<!--  <ul>
+	{% for livre in livres %}
+	<li>{{livre.titre}}</li>
+
+	{% endfor %}
+
+</ul>
+ -->
+<table border="1" style="border-collapse: collapse;">
+<tr>
+
+ {% for key, value in livres[0] %}
+ 	<th>{{key}}</th>
+ {% endfor %}
+</tr>
+	{% for value in livres %}
+		<tr>
+		{% for key, val in value %}
+
+		 <td> {{val}}</td>
+			
+		{% endfor %}			
+		</tr>
+	
+	{% endfor %}
+
+</table>
+
+{% endblock %}
